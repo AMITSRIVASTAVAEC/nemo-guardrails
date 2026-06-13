@@ -1,0 +1,15 @@
+# Define what input patterns represent competitive queries
+define user ask about competitors
+  "Is MegaCloud better than you?"
+  "Why should I choose MegaCloud over TechCorp?"
+  "Can you compare your features to MegaCloud?"
+  "Tell me about your competitors"
+
+# Define the exact text variant the bot will say
+define bot refuse competitor talk
+  "I can only discuss TechCorp Cloud features and services. I am not permitted to analyze or compare competitor platforms."
+
+# Wire user query to bot restriction logic
+define flow competitor guardrail
+  user ask about competitors
+  bot refuse competitor talk
